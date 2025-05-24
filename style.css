@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
 body {
-  background-image: url('https://media.discordapp.net/attachments/675731468353404965/1375926829315260598/Navy_and_Grey_Illustration_Stars_Night_Space_Astronaut_Desktop_Wallpaper_1.png?ex=68337737&is=683225b7&hm=c19cb77597a65d80f0759e5518fb69206ddbdad73f18470c766ab0b445a8f89d&=&format=webp&quality=lossless&width=1511&height=850');
+  background-image: url('https://media.discordapp.net/attachments/675731468353404965/1375965336926556270/Navy_and_Grey_Illustration_Stars_Night_Space_Astronaut_Desktop_Wallpaper.png?ex=68339b14&is=68324994&hm=72591d3d1c1cf2dbb02f06943dcb679a33c305b23664dce8772ad9c80854cb81&=&format=webp&quality=lossless&width=1511&height=850');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -436,4 +436,35 @@ button:disabled {
   padding-left: 10px;
   max-height: 150px;
   overflow-y: auto;
+}
+.animated-title {
+  display: block;
+  margin: 0 auto;
+  text-align: center; /* ha a szöveget is középre akarod */
+  /* a korábbi animációs szabályok maradnak */
+  color: #f3f3f3;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+  animation: shakePulseJump 2s infinite ease-in-out;
+  font-size: 2rem;
+  user-select: none;
+}
+
+@keyframes shakePulseJump {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    filter: drop-shadow(0 0 2px #fffffe);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate(-2px, 1px) scale(1.05);
+    filter: drop-shadow(0 0 6px #f7f7f7);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate(2px, -1px) scale(0.95);
+    filter: drop-shadow(0 0 3px #f5f4f2);
+  }
+  55% {
+    transform: translate(0, -5px) scale(1.1);
+    filter: drop-shadow(0 0 10px #fdfdfc);
+  }
 }
