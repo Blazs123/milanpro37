@@ -259,16 +259,17 @@ button:hover:not(:disabled) {
 }
 #wheelArrow {
   position: absolute;
-  bottom: -20px;
+  top: -30px; /* felkerül a kerék fölé */
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 30px solid #ff6a00;
+  border-top: 30px solid #ff6a00; /* LEFELÉ mutató nyíl */
   z-index: 10;
 }
+
 
 
 #popupWinner {
