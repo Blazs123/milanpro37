@@ -416,3 +416,24 @@ button:disabled {
   text-shadow: 0 0 4px rgba(0,0,0,0.7);
   margin: 12px 0 8px; /* megőrizve az eredeti margót */
 }
+
+#nameListContainer {
+  margin-top: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 15px;
+  color: #ddd;
+  font-weight: 600;
+  text-align: left;
+  box-shadow: 0 0 10px #222;
+}
+
+#nameList {
+  list-style: none;
+  padding-left: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
