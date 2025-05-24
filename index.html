@@ -95,35 +95,43 @@
     </div>
   </section>
 
-  <!-- GIVEAWAY TAB -->
   <section id="giveawayTab" class="tab-content" style="display: none; text-align: center;">
-    <h2>Kaszinó Giveaway Wheel</h2>
-    <p id="loginRequiredMsg" style="color:#ffffff; font-weight:700;">Jelentkezz be Twitch-el a részvételhez!</p>
+  <h2>Kaszinó Giveaway Wheel</h2>
+  <p id="loginRequiredMsg" style="color:#ff6a00; font-weight:700;">Jelentkezz be Twitch-el a részvételhez!</p>
 
-    <div id="userInfo" style="display:none;">
-      Bejelentkezve mint: <span id="twitchUsername"></span>
-      <div id="adminNotice" style="display:none; color:#00ff88; font-weight:700;">✅ Admin mód aktív</div>
-    </div>
+  <div id="userInfo" style="display:none;">
+    Bejelentkezve mint: <span id="twitchUsername"></span>
+    <div id="adminNotice" style="display:none; color:#00ff88; font-weight:700;">✅ Admin mód aktív</div>
+  </div>
 
-    <div id="adminControls" style="display:none; margin-top:20px;">
-      <input type="text" id="nameInput" placeholder="Add meg a nevet" />
-      <button id="addNameBtn">Hozzáadás a kerékhez</button>
-    </div>
+  <div id="adminControls" style="display:none; margin-top:20px;">
+    <input type="text" id="nameInput" placeholder="Add meg a nevet" />
+    <button id="addNameBtn">Hozzáadás a kerékhez</button>
+  </div>
 
-    <button id="spinBtn" disabled>Spin</button>
+  <button id="spinBtn" disabled>Spin</button>
 
-    <div id="wheelContainer" aria-live="polite" aria-atomic="true">
-      <div id="wheelArrow"></div>
-      <canvas id="wheelCanvas" width="400" height="400" role="img" aria-label="Giveaway kerék"></canvas>
-      <img id="wheelImage" src="wheel.png" alt="Kaszinó kerék középen" />
-    </div>
+  <div id="wheelContainer">
+    <div id="wheelArrow"></div>
+    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+    <img id="wheelImage" src="wheel.png" alt="Kaszinó kerék középen" />
+  </div>
 
-    <div id="winner" role="status" aria-live="assertive"></div>
+  <div id="winner"></div>
 
-    <div id="popupWinner">
-      <p id="popupText"></p>
-    </div>
-  </section>
+  <div id="popupWinner">
+    <p id="popupText"></p>
+  </div>
+
+  <!-- Ide jön a nevek listája -->
+  <aside id="nameListContainer" aria-label="Keréken szereplő nevek listája" style="margin-top: 30px; max-width: 400px; margin-left: auto; margin-right: auto; background: rgba(0,0,0,0.5); border-radius: 12px; padding: 15px; color: #ddd; font-weight: 600; text-align: left;">
+    <h3>Résztvevők listája:</h3>
+    <ul id="nameList" style="list-style: none; padding-left: 10px; max-height: 150px; overflow-y: auto;">
+      <!-- Nevek ide jönnek majd JS-ből vagy kézzel -->
+    </ul>
+  </aside>
+</section>
+
 
   <!-- FAQ és STORE tabok ide jöhetnek -->
   <section id="faqTab" class="tab-content" style="display:none; text-align:center;">
