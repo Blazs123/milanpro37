@@ -468,3 +468,8 @@ button:disabled {
     filter: drop-shadow(0 0 10px #fdfdfc);
   }
 }
+.chance {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #bbb;
+}
