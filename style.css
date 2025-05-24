@@ -291,3 +291,15 @@ button:hover:not(:disabled) {
   box-shadow: 0 0 20px #ff6a00cc;
   text-align: center;
 }
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ff6a00;
+  color: #1a0f0f;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 6px #ff6a00bb;
+}
