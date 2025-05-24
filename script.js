@@ -174,6 +174,7 @@ addNameBtn.addEventListener('click', () => {
     participants.push(name);
     nameInput.value = '';
     drawWheel();
+    updateNameList(participants);  // Ezzel frissíted a listát is
   }
 });
 
@@ -202,13 +203,3 @@ function updateNameList(names) {
     list.appendChild(li);
   });
 }
-
-addNameBtn.addEventListener('click', () => {
-  const name = nameInput.value.trim();
-  if (name && !participants.includes(name)) {
-    participants.push(name);
-    nameInput.value = '';
-    drawWheel();
-    updateNameList(participants); // <--- itt frissíted a listát
-  }
-});
