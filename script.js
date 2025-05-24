@@ -204,3 +204,30 @@ function updateNameList(names) {
     list.appendChild(li);
   });
 }
+function updateParticipantStats() {
+  const nameList = document.getElementById('nameList');
+  const participantCountElem = document.getElementById('participantCount');
+  const items = nameList.querySelectorAll('li');
+  const count = items.length;
+
+  participantCountElem.textContent = count;
+
+  items.forEach(item => {
+    // Számoljuk ki az esélyt: 100% / résztvevők száma
+    const chance = (100 / count).toFixed(2);
+    // Ha már van % jel, frissítsük, ha nem, adjuk hozzá
+    if (!item.querySelector('.chance')) {
+      const span = document.createElement('span');
+      span.className = 'chance';
+      span.style.marginLeft = '8px';
+      span.style.color = '#aaa';
+      span.textContent = `(${chance}%)`;
+      item.appendChild(span);
+    } else {
+      item.querySelector('.chance').textContent = `(${chance}%)`;
+    }
+  });
+}
+
+// Ha dinamikusan változhat a lista, akkor ezt hívjad meg frissítéskor
+updateParticipantStats();
