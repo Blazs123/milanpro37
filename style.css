@@ -36,17 +36,23 @@ header {
 #profile-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
 }
 
 #profilePic {
-  width: 60px;   /* kisebb profilkép */
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  border: 2px solid #555555cc;
+  border: 2px solid #bbb;
+  box-shadow: 0 0 10px #bbb;
+  cursor: pointer;
+  transition: transform 0.3s ease;
   object-fit: cover;
-  box-shadow: 0 0 6px #555555cc;
   margin: 0;
+}
+
+#profilePic:hover {
+  transform: rotate(360deg);
 }
 
 .social-icons {
@@ -55,15 +61,17 @@ header {
 }
 
 .social-icons a img {
-  width: 24px;   /* kisebb ikonok */
+  width: 24px;
   height: 24px;
   border-radius: 6px;
   filter: brightness(0.8);
   transition: filter 0.4s ease, transform 0.3s ease;
+  filter: grayscale(60%);
 }
 
 .social-icons a:hover img {
-  filter: brightness(1);
+  filter: none;
+  brightness(1);
   transform: scale(1.1);
   box-shadow: 0 0 8px #555555cc;
 }
@@ -126,7 +134,6 @@ header {
   box-shadow: 0 0 15px #888888;
   outline: none;
 }
-
 
 nav {
   display: flex;
@@ -219,37 +226,6 @@ button:disabled {
   box-shadow: none;
 }
 
-#profile-container {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-#profilePic {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #bbb;
-  box-shadow: 0 0 10px #bbb;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-#profilePic:hover {
-  transform: rotate(360deg);
-}
-
-.social-icons a img {
-  width: 24px;
-  height: 24px;
-  filter: grayscale(60%);
-  transition: filter 0.3s ease;
-}
-
-.social-icons a:hover img {
-  filter: none;
-}
-
 .deals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -258,29 +234,30 @@ button:disabled {
 }
 
 .deal-card {
-  background: rgba(30, 30, 30, 0.9);
-  border-radius: 16px;
-  padding: 20px;
-  color: #ccc;
-  box-shadow: 0 0 10px #333;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  height: 350px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.deal-card:hover,
-.deal-card:focus-visible {
-  box-shadow: 0 0 20px #ffffff;
-  transform: scale(1.03);
-  outline: none;
+.deal-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .deal-card p {
-  margin: 6px 0;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #fff;
+  text-shadow: 0 0 4px rgba(0,0,0,0.7);
+  margin: 12px 0 8px;
 }
 
 .btn {
@@ -340,16 +317,17 @@ button:disabled {
 
 #wheelArrow {
   position: absolute;
-  bottom: 380px;  /* lent legyen */
+  bottom: 380px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 30px solid #ffffff; /* lefelé mutató nyíl */
+  border-top: 30px solid #ffffff;
   z-index: 10;
 }
+
 #winner {
   margin-top: 24px;
   font-weight: 700;
@@ -380,66 +358,105 @@ button:disabled {
   display: block;
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 12px;
+  }
+  nav button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    min-width: 120px;
   }
   .deals-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
   }
   #wheelContainer {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
   #wheelImage {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+  }
+  body {
+    background-position: top center;
+  }
+  header {
+    flex-wrap: wrap;
+    padding: 8px 20px;
+    gap: 12px;
+  }
+  #profile-container {
+    gap: 8px;
+  }
+  #profilePic {
+    width: 50px;
+    height: 50px;
+  }
+  .social-icons a img {
+    width: 20px;
+    height: 20px;
+  }
+  #twitchLoginBtn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  main {
+    padding: 20px;
+    gap: 16px;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  input[type="text"] {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 12px;
+  }
+  button {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+  }
+  #nameListContainer {
+    max-width: 90vw;
+    padding: 12px;
   }
 }
-.deal-card {
-  background-color: rgba(255, 255, 255, 0.1); /* nagyon világos, átlátszó */
-  color: #fff; /* vagy sötét szín a szövegnek, ha a háttér sötét */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 350px; /* vagy amennyi kell, hogy az összes elem kényelmesen elférjen */
-  padding: 10px;
-  box-sizing: border-box;
-}
 
-.deal-card:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* hoverre picit erősebb */
-}
-.deal-card p {
-  background-color: rgba(0, 0, 0, 0.5); /* félátlátszó fekete */
-  padding: 6px 12px;
-  border-radius: 8px;
-  color: #fff; /* fehér szöveg */
-  text-shadow: 0 0 4px rgba(0,0,0,0.7);
-  margin: 12px 0 8px; /* megőrizve az eredeti margót */
-}
-
-#nameListContainer {
-  margin-top: 30px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(0,0,0,0.5);
-  border-radius: 12px;
-  padding: 15px;
-  color: #ddd;
-  font-weight: 600;
-  text-align: left;
-  box-shadow: 0 0 10px #222;
-}
-
-#nameList {
-  list-style: none;
-  padding-left: 10px;
-  max-height: 150px;
-  overflow-y: auto;
+@media (max-width: 480px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+  #header-left, #header-center, #header-right {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  nav button {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    min-width: 100px;
+  }
+  #wheelContainer {
+    width: 220px;
+    height: 220px;
+  }
+  #wheelImage {
+    width: 50px;
+    height: 50px;
+  }
+  .deal-card {
+    height: auto;
+    padding: 12px 8px;
+  }
+  .deal-card p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+  }
 }
