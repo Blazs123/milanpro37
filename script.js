@@ -203,6 +203,12 @@ function updateNameList(names) {
   });
 }
 
-// Példa használat:
-const wheelNames = ["Anna", "Béla", "Csaba", "Dóri"];
-updateNameList(wheelNames);
+addNameBtn.addEventListener('click', () => {
+  const name = nameInput.value.trim();
+  if (name && !participants.includes(name)) {
+    participants.push(name);
+    nameInput.value = '';
+    drawWheel();
+    updateNameList(participants); // <--- itt frissíted a listát
+  }
+});
