@@ -174,9 +174,10 @@ addNameBtn.addEventListener('click', () => {
     participants.push(name);
     nameInput.value = '';
     drawWheel();
-    updateNameList(participants);  // Ezzel frissíted a listát is
+    updateNameList(participants);  // Ezzel frissíted a listát
   }
 });
+
 
 twitchLoginBtn.addEventListener('click', twitchLogin);
 
