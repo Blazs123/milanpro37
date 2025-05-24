@@ -192,3 +192,17 @@ window.addEventListener('load', () => {
 
 spinBtn.addEventListener('click', spinWheel);
 drawWheel();
+
+function updateNameList(names) {
+  const list = document.getElementById('nameList');
+  list.innerHTML = ''; // törli az előző tartalmat
+  names.forEach(name => {
+    const li = document.createElement('li');
+    li.textContent = name;
+    list.appendChild(li);
+  });
+}
+
+// Példa használat:
+const wheelNames = ["Anna", "Béla", "Csaba", "Dóri"];
+updateNameList(wheelNames);
